@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Lista de Compras</title>
-  <style>
-
-    
-  
-  </style>
-</head>
-<body>
-  <h1>Shopping List</h1>
-
-  <input type="text" id="item-input" placeholder="Add an item...">
-  <input type="number" id="quantity-input" placeholder="Quantity" min="1">
-  <button id="add-btn">Add</button>
-
-  <ul id="shopping-list"></ul>
-
-  <script>
-    const itemInput = document.getElementById("item-input");
+const itemInput = document.getElementById("item-input");
     const quantityInput = document.getElementById("quantity-input")
     const addBtn = document.getElementById("add-btn");
     const shoppingList = document.getElementById("shopping-list");
@@ -69,6 +48,11 @@
         return;
       }
 
+      if (items.some(item => item.split(" ").slice(1).join(" ") === itemName)) {
+        alert("You already have that item in the cart. Please remove it and add new desired quantity");
+        return;
+      }
+
       items.push(newItem);
       saveList();
       renderList();
@@ -79,9 +63,3 @@
     })
 
     renderList()
-
-    // adicionar ainda o limite da lista
-
-  </script>
-</body>
-</html>
