@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador Simples</title>
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    #counter {
+      margin: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      background-color: rgb(125, 40, 120);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Counter</h1>
+  <div class="counter" id="counter">Counter: 0</div>
+  <button id="decrement">-</button>
+  <button id="increment">+</button>
+  <button id="reset">Reset</button>
+
+  <script>
+    const counter = document.getElementById("counter");
+    const decrement = document.getElementById("decrement");
+    const increment = document.getElementById("increment");
+    const reset = document.getElementById("reset");
+
+    let result = 0;
+
+    increment.addEventListener("click", () => {
+      result += 1;
+      counter.textContent = `Counter: ${result}`;
+    })
+
+    decrement.addEventListener("click", () => {
+      result -= 1;
+      counter.textContent = `Counter: ${result}`;
+    })
+
+    reset.addEventListener("click", () => {
+      result = 0;
+      counter.textContent = `Counter: ${result}`;
+    })
+  </script>
+</body>
+</html>
