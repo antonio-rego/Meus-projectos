@@ -49,7 +49,7 @@ const itemInput = document.getElementById("item-input");
       }
 
       if (items.some(item => item.split(" ").slice(1).join(" ") === itemName)) {
-        alert("You already have that item in the cart. Please remove it and add new desired quantity");
+        alert("That item is already in the list");
         return;
       }
 
