@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Forca</title>
+  <style>
+  </style>
+</head>
+<body>
+  <div class="intro-and-rules-container">
+    <h1>Hangman game</h1>
+    <p class="intro-msg">
+      Welcome to the hangman game!
+    </p>
+    <button class="rules-btn">Click here to see the rules</button>
+    <div class="rules">
+      <li>1. The goal of the game is to guess the hidden word.</li>
+      <li>2. On each turn, the player tries to guess one of the letters in the word.</li>
+      <li>3. If the word contains the letter, it will be shown in the correct position.</li>
+      <li>4. If the word DOES NOT contain the letter, the player loses a life.</li>
+      <li>5. The number of lives varies, depending on the chosen difficulty.</li> 
+    </div>
+    <button class="discard-btn">Discard</button>
+  </div>
+  <div class="dificulty-container">
+    <p>Select difficulty:</p>
+    <input id="easy" type="radio" name="difficulty">
+    <label for="easy">Easy</label>
+    <input id="medium" type="radio" name="difficulty">
+    <label for="medium">Medium</label>
+    <input id="hard" type="radio" name="difficulty">
+    <label for="hard">Hard</label>
+  </div>
+  <button class="next-btn">Next</button>
+</body>
+</html>
