@@ -1,9 +1,16 @@
 import { Rules } from "./Rules";
+import { useNavigate } from "react-router";
 
 export function HomePage() {
 
+  const navigate = useNavigate();
+  function handleNext() {
+    navigate("/challenge")
+  }
+
   return (
     <>
+        <title>Jogo da Forca</title> {/* O resto? */}
         <h1>Hangman game</h1>
         <p className="intro-msg">
           Welcome to the hangman game!
@@ -18,7 +25,9 @@ export function HomePage() {
         <input id="hard" type="radio" name="difficulty" />
         <label htmlFor="hard">Hard</label>
       </div>
-      <button className="next-btn">Next</button>
+      <button className="next-btn"
+      onClick={handleNext}
+      >Next</button>
     </>
   )
 }
