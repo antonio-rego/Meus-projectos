@@ -1,12 +1,21 @@
 import { Rules } from "./Rules";
 import { useNavigate } from "react-router";
+import { Fragment, useState } from "react";
 
 export function HomePage() {
 
   const navigate = useNavigate();
   function handleNext() {
-    navigate("/challenge")
+    navigate("/challenge", { state: {attempts: selectedAttempts} })
   }
+
+  const [selectedAttempts, setSelectedAttempts] = useState(6);
+
+  const difficulties = [
+    {id: "easy", label: "Easy", attempts: 8},
+    {id: "medium", label: "Medium", attempts: 6},
+    {id: "hard", label: "Hard", attempts: 4}
+  ];
 
   return (
     <>
@@ -18,12 +27,23 @@ export function HomePage() {
         <Rules />
       <div className="difficulty-container">
         <p>Select difficulty:</p>
-        <input id="easy" type="radio" name="difficulty" />
-        <label htmlFor="easy">Easy</label>
-        <input id="medium" type="radio" name="difficulty" />
-        <label htmlFor="medium">Medium</label>
-        <input id="hard" type="radio" name="difficulty" />
-        <label htmlFor="hard">Hard</label>
+        {difficulties.map(dif => {
+          return (
+          <Fragment key={dif.id}>
+          <input 
+          id={dif.id}
+          type="radio"
+          name="difficulty"
+          value={dif.attempts}
+          checked={selectedAttempts === dif.attempts}
+          onChange={() => setSelectedAttempts(dif.attempts)}
+          />
+          <label htmlFor={dif.id}>
+            {dif.label}
+          </label>
+          </Fragment>
+          )
+        })}
       </div>
       <button className="next-btn"
       onClick={handleNext}
