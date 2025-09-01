@@ -9,12 +9,12 @@ export function HomePage() {
     navigate("/challenge", { state: {attempts: selectedAttempts} })
   }
 
-  const [selectedAttempts, setSelectedAttempts] = useState(6);
+  const [selectedAttempts, setSelectedAttempts] = useState(7);
 
   const difficulties = [
     {id: "easy", label: "Easy", attempts: 8},
-    {id: "medium", label: "Medium", attempts: 6},
-    {id: "hard", label: "Hard", attempts: 4}
+    {id: "medium", label: "Medium", attempts: 7},
+    {id: "hard", label: "Hard", attempts: 6}
   ];
 
   return (

@@ -5,7 +5,7 @@ export function ChallengePage() {
   const navigate = useNavigate();
 
   const themes = ["Animals", "Jobs", "Countries", "Foods", "Random"];
-  const attempts = location.state?.attempts || 6
+  const attempts = location.state?.attempts || 7
 
   function handleTheme(theme) {
     navigate("/challenge/game", {

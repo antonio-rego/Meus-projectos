@@ -1,11 +1,42 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 
 export function GamePage() {
-  const possibleWords = ["MONKEY", "DOG", "BIRD", "CAT", "ELEPHANT", "LION", "TIGER"];
+
+  const location = useLocation();
+
+  let theme = location.state?.theme || "Random"
+  const startingAttempts = location.state?.attempts || 7
+
+  if (theme === "Random") {
+    const availableThemes = ["Animals", "Jobs", "Foods", "Countries"];
+    const index = Math.floor(Math.random() * 4);
+    theme = availableThemes[index];
+  }
+
+  function selectWords() {
+    let words = [];
+    if (theme === "Animals") {
+      words = ["MONKEY", "DOG", "BIRD", "CAT", "ELEPHANT", "LION", "TIGER"];
+    }
+    else if (theme === "Jobs") {
+      words = ["PROGRAMMER", "DOCTOR", "ENGINEER", "FIREMAN", "MANAGER", "LAWYER", "PROFESSOR"];
+    }
+    else if (theme === "Countries") {
+      words = ["PORTUGAL", "SPAIN", "FRANCE", "ITALY", "GERMANY", "SWEDEN", "BELGIUM"];
+    }
+    else if (theme === "Foods") {
+      words = ["FRIES", "PIZZA", "STEAK", "BROCOLI", "RICE", "PASTA", "BANANA"];
+    }
+    
+    return words
+  }
+
+  const possibleWords = selectWords();
 
   const [word, setWord] = useState("");
   const [hidden, setHidden] = useState([]);
-  const [attempts, setAttempts] = useState(6);
+  const [attempts, setAttempts] = useState(startingAttempts);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [gameOver, setGameOver] = useState(false);
 
@@ -14,7 +45,7 @@ export function GamePage() {
     const newWord = possibleWords[Math.floor(Math.random() * possibleWords.length)];
     setWord(newWord);
     setHidden(Array(newWord.length).fill("_"));
-    setAttempts(6);
+    setAttempts(startingAttempts);
     setWrongLetters([]);
     setGameOver(false);
   }
@@ -82,7 +113,9 @@ export function GamePage() {
     <div className="game-container">
       <img src="/Imagem-de-forca.png" width="250px" />
 
-      <p>Start guessing by typing letters on your keyboard</p>
+      <p className="intro-msg">Start guessing by typing letters on your keyboard</p>
+
+      <p className="theme">Theme: {theme}</p>
 
       <div className="hidden-word">{hidden.join(" ")}</div>
 
