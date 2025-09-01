@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
+import './GamePage.css'
 
 export function GamePage() {
 
@@ -10,7 +11,7 @@ export function GamePage() {
 
   if (theme === "Random") {
     const availableThemes = ["Animals", "Jobs", "Foods", "Countries"];
-    const index = Math.floor(Math.random() * 4);
+    const index = Math.floor(Math.random() * availableThemes.length);
     theme = availableThemes[index];
   }
 
@@ -28,7 +29,7 @@ export function GamePage() {
     else if (theme === "Foods") {
       words = ["FRIES", "PIZZA", "STEAK", "BROCOLI", "RICE", "PASTA", "BANANA"];
     }
-    
+
     return words
   }
 
@@ -83,15 +84,13 @@ export function GamePage() {
       }
     } else {
       setWrongLetters(prev => [...prev, letter]);
-      setAttempts(prev => {
-        const newAttempts = prev - 1;
+        const newAttempts = attempts - 1;
+        setAttempts(newAttempts);
         if (newAttempts <= 0) {
           setGameOver(true);
           setHidden(word.split(""));
           alert(`You lost :(\n The correct word was "${word}"`);
         }
-        return newAttempts;
-      });
     }
   }
 
@@ -107,23 +106,32 @@ export function GamePage() {
   useEffect(() => {
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [hidden, wrongLetters, attempts, gameOver]);
+  }, [hidden, wrongLetters, attempts, gameOver]); 
 
   return (
-    <div className="game-container">
-      <img src="/Imagem-de-forca.png" width="250px" />
+    <>
+      <div className="intro-msg">Start guessing by typing letters on your keyboard</div>
 
-      <p className="intro-msg">Start guessing by typing letters on your keyboard</p>
+      <h1 className="theme-title">Theme: {theme}</h1>
 
-      <p className="theme">Theme: {theme}</p>
+      <div className="game-container">
 
-      <div className="hidden-word">{hidden.join(" ")}</div>
+        <div className="game-box">
 
-      <div className="attempts">Attempts left: {attempts}</div>
+          <div className="hidden-word">{hidden.join(" ")}</div>
 
-      <div className="wrong-letters">Wrong letters: {wrongLetters.join(", ")}</div>
+          <button className="restart-btn" onClick={resetGame}>Restart</button>
 
-      <button className="reset-btn" onClick={resetGame}>Restart</button>
-    </div>
+        </div>
+
+        <div className="details">
+
+          <div className="attempts">Attempts left: {attempts}</div>
+
+          <div className="wrong-letters">Wrong letters: {wrongLetters.join(", ")}</div>
+
+        </div>
+      </div>
+    </>
   );
 }

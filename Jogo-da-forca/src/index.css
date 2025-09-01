@@ -1,6 +1,9 @@
 body {
-  background-color: rgb(240, 245, 238);
-  color: rgb(50, 50, 50);
+  background-image: url('/imagem-de-forca.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  color: rgb(235, 240, 228);
   margin: 0;
   overflow: hidden;
   font-size: 1.1rem;

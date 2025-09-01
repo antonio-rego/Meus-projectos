@@ -1,0 +1,28 @@
+.challenge-container {
+  padding: 20px;
+}
+
+.choose-title {
+  margin-top: 25px;
+  margin-left: 10px;
+  color: rgb(183, 65, 14);
+  font-size: 2.5rem;
+}
+
+.themes {
+  display: inline-block;
+}
+
+.themes li {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  cursor: pointer;
+  list-style: none;
+}
+
+li::before {
+  content: "👉 ";
+}
+
+
+

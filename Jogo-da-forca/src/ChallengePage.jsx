@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router";
+import './ChallengePage.css';
 
 export function ChallengePage() {
   const location = useLocation();
@@ -16,21 +17,20 @@ export function ChallengePage() {
   }
 
   return (
-    <>
-      <h1>Choose a theme:</h1>
+    <div className="challenge-container">
+      <h1 className="choose-title">Choose a theme:</h1>
       <div className="themes">
         <ul>
           {themes.map(theme => (
             <li
               key={theme}
               onClick={() => handleTheme(theme)}
-              style={{ cursor: "pointer", margin: "5px 0" }}
             >
               {theme}
             </li>
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 }

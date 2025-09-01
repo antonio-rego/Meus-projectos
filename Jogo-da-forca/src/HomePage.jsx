@@ -23,7 +23,7 @@ export function HomePage() {
       <title>Jogo da Forca</title> {/* O resto? */}
       <div className="home-container">
         <div className="home-text">
-          <h1>Hangman game</h1>
+          <h1 class="game-title">Hangman game</h1>
           <p className="intro-msg">
             Welcome to the hangman game!
           </p>
