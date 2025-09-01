@@ -1,4 +1,7 @@
 body {
-  background-color: rgba(240, 245, 238);
-  color: rgb(183, 65, 14);
+  background-color: rgb(240, 245, 238);
+  color: rgb(50, 50, 50);
+  margin: 0;
+  overflow: hidden;
+  font-size: 1.1rem;
 }

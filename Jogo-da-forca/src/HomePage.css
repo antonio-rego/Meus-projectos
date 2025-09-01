@@ -1,0 +1,56 @@
+h1 {
+  margin: 25px 10px;
+  color: rgb(183, 65, 14);
+  font-size: 2.5rem;
+}
+
+.intro-msg {
+  margin: 20px 0 15px 30px;
+}
+
+.rules-btn, .discard-btn{
+  margin-left: 10px;
+  padding: 3px;
+  border-radius: 5px;
+  border: none;
+  color:rgb(235, 240, 228);
+  background-color: rgb(183, 65, 14);
+  cursor: pointer;
+}
+
+.difficulty-container {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.input-container {
+  display: block;
+  margin-top: 10px;
+}
+
+.next-btn {
+  margin-top: 20px;
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: none;
+  color:rgb(235, 240, 228);
+  background-color: rgb(86, 13, 143);
+  cursor: pointer;
+}
+
+.home-container {
+  display: flex;
+  color: rgb(235, 240, 228);
+  width: 100vw;
+  height: 100vh;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-image: url('imagem-de-forca1.jpg');
+  background-size: cover;     
+  background-position: center;  
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
