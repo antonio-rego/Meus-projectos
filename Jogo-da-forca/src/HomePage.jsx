@@ -20,7 +20,8 @@ export function HomePage() {
 
   return (
     <>
-      <title>Jogo da Forca</title> {/* O resto? */}
+      <title>Jogo da Forca</title>
+      <link rel="icon" href="/imagem-de-forca-favicon.jpg" />
       <div className="home-container">
         <div className="home-text">
           <h1 class="game-title">Hangman game</h1>

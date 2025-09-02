@@ -6,14 +6,8 @@ export function GamePage() {
 
   const location = useLocation();
 
-  let theme = location.state?.theme || "Random"
+  const theme = location.state?.theme || "Animals"
   const startingAttempts = location.state?.attempts || 7
-
-  if (theme === "Random") {
-    const availableThemes = ["Animals", "Jobs", "Foods", "Countries"];
-    const index = Math.floor(Math.random() * availableThemes.length);
-    theme = availableThemes[index];
-  }
 
   function selectWords() {
     let words = [];
@@ -61,7 +55,6 @@ export function GamePage() {
     letter = letter.toUpperCase();
 
     if (hidden.includes(letter) || wrongLetters.includes(letter)) {
-      alert("You already tried that letter");
       return;
     }
 
@@ -84,13 +77,13 @@ export function GamePage() {
       }
     } else {
       setWrongLetters(prev => [...prev, letter]);
-        const newAttempts = attempts - 1;
-        setAttempts(newAttempts);
-        if (newAttempts <= 0) {
-          setGameOver(true);
-          setHidden(word.split(""));
-          alert(`You lost :(\n The correct word was "${word}"`);
-        }
+      const newAttempts = attempts - 1;
+      setAttempts(newAttempts);
+      if (newAttempts <= 0) {
+        setGameOver(true);
+        setHidden(word.split(""));
+        alert(`You lost :(\n The correct word was "${word}"`);
+      }
     }
   }
 
@@ -106,13 +99,17 @@ export function GamePage() {
   useEffect(() => {
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [hidden, wrongLetters, attempts, gameOver]); 
+  }, [hidden, wrongLetters, attempts, gameOver]);
 
   return (
     <>
-      <div className="intro-msg">Start guessing by typing letters on your keyboard</div>
-
+      <title>Jogo da Forca</title>
+      <link rel="icon" href="/imagem-de-forca-favicon.jpg" />
+    
       <h1 className="theme-title">Theme: {theme}</h1>
+
+      <div className="intro-msg">Guess the letters by typing them on your keyboard</div>
+
 
       <div className="game-container">
 
