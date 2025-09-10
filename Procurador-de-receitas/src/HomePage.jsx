@@ -5,11 +5,12 @@ export function HomePage() {
     <>
       <Header />
 
-      <div className="suggestions-container">
-        <div className="popular-meals">Popular meals</div>
-        <div className="healthy-suggestions">Healthy suggestions</div>
-        <div className="popular-desserts">Popular desserts</div>
-        <div className="random">Today's plate</div>
+      <div className="options-container">
+        <div className="seafood">Seafood</div>
+        <div className="portuguese-dishes">Portuguese dishes</div>
+        <div className="desserts">Desserts</div>
+        <div className="breakfast">Breakfast</div>
+        <div className="random">Dish of the Day</div>
       </div>
     </>
   )

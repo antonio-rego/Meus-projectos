@@ -12,12 +12,12 @@ export function Header() {
   const [search, setSearch] = useState(searchText || '');
 
   function targetValue(event) {
-    setSearch(event.value.target);
+    setSearch(event.target.value); // search transforma-se depois no valor na query
   }
 
   function handleSearch() {
     if (search.trim()) {
-      navigate(`/recipes?=${search}`); // completar aqui
+      navigate(`/recipes?search=${search}`); // navega para a página que vai buscar o API
     }
   }
 
@@ -25,7 +25,8 @@ export function Header() {
     <div className="input-container">
     <input type="text" 
     className="search-bar" 
-    placeholder="Search by name, ingredient or type of plate" 
+    placeholder="Search by recipe name..." 
+    value={search}
     onChange={targetValue}
     />
     <button 
