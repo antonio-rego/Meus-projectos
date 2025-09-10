@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { Header } from "../Header";
 import axios from "axios";
 
-export function DailyPlate() {
+export function RandomMeal() {
 
   const [randomMealResult, setRandomMealResult] = useState([]);
 
   useEffect(() => {
     const fetchSeafoodData = async () => {
       const response = await axios.get('https://themealdb.com/api/json/v1/1/random.php');
-      setRandomMealResult(response.data.meals)
+      setRandomMealResult(response.data.meals[0]); // devolve logo o único objecto que tem
     };
     fetchSeafoodData();
   }, []);

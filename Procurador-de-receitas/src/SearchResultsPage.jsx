@@ -23,7 +23,7 @@ export function SearchResultsPage() {
     <>
       <Header />
       <div className="recipes-container">
-        {searchResults.length === 0 ? 
+        {searchResults.length === 0 && search ? 
         (
           <p>No results found for "{search}"</p>
           // adicionar uma imagem

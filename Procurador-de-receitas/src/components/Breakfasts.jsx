@@ -8,7 +8,7 @@ export function Breakfasts() {
 
   useEffect(() => {
     const fetchSeafoodData = async () => {
-      const response = await axios.get('https://themealdb.com/api/json/v1/1/filter.php?c=desserts');
+      const response = await axios.get('https://themealdb.com/api/json/v1/1/filter.php?c=breakfast');
       setBreakfastsResults(response.data.meals)
     };
     fetchSeafoodData();

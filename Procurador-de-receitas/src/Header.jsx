@@ -15,6 +15,17 @@ export function Header() {
     setSearch(event.target.value); // search transforma-se depois no valor na query
   }
 
+  function handleKey(event) {
+    const key = event.key;
+
+    if (key === 'Enter') {
+      handleSearch();
+    }
+    if (key === 'Escape') {
+      setSearch('');
+    }
+  }
+
   function handleSearch() {
     if (search.trim()) {
       navigate(`/recipes?search=${search}`); // navega para a página que vai buscar o API
@@ -28,6 +39,7 @@ export function Header() {
     placeholder="Search by recipe name..." 
     value={search}
     onChange={targetValue}
+    onKeyDown={handleKey}
     />
     <button 
     className="search-btn"
