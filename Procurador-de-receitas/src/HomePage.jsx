@@ -10,7 +10,7 @@ export function HomePage() {
         <div className="portuguese-dishes">Portuguese dishes</div>
         <div className="desserts">Desserts</div>
         <div className="breakfast">Breakfast</div>
-        <div className="random">Dish of the Day</div>
+        <div className="random">Random Meal</div>
       </div>
     </>
   )

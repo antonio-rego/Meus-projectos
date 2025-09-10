@@ -12,7 +12,7 @@ export function SearchResultsPage() {
 
   useEffect(() => {
    const fetchResults = async () => {
-      const urlPath = `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`;
+      const urlPath = `https://themealdb.com/api/json/v1/1/search.php?s=${search}`;
       const response = await axios.get(urlPath);
       setSearchResults(response.data.meals || []); // resultado directo do objecto 'meals' da API.
     };
