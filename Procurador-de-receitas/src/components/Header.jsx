@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router';
+import './Header.css';
 
 
 export function Header() {
@@ -33,7 +34,7 @@ export function Header() {
   }
 
   return (
-    <div className="input-container">
+    <div className="header-input-container">
     <input type="text" 
     className="search-bar" 
     placeholder="Search by recipe name..." 

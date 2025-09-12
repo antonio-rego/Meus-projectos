@@ -1,0 +1,21 @@
+.background-image-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/imagem-de-capa.jpg');
+  overflow: hidden;
+}
+
+.options-container {
+  width: 30%;
+  margin-top: 10vh;
+  margin-left: 6%;
+}
+
+.options-container div {
+  background-color: rgb(250, 250, 229);
+  margin-top: 40px;
+  padding: 10px 10px 10px 35px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  cursor: pointer;
+}

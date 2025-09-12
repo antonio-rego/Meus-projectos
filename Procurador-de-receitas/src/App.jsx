@@ -8,6 +8,7 @@ import { Desserts } from "./components/Desserts";
 import { Breakfasts } from "./components/Breakfasts";
 import { RandomMeal } from "./components/RandomMeal";
 import { RecipeDetails } from "./components/RecipeDetails";
+import './App.css';
 
 
 function App() {
