@@ -1,4 +1,4 @@
-import { Header } from "./Header";
+import { Header } from "../components/Header";
 import { useNavigate } from "react-router";
 
 export function HomePage() {

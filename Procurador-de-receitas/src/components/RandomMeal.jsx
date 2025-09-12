@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
-import { Header } from "../Header";
+import { Header } from "./Header";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 export function RandomMeal() {
 
   const [randomMealResult, setRandomMealResult] = useState([]);
+
+  const navigate = useNavigate();
+
+  function renderDetails(id) {
+    navigate(`/details/${id}`);
+  };
 
   useEffect(() => {
     const fetchSeafoodData = async () => {
@@ -18,7 +25,10 @@ export function RandomMeal() {
     <>
       <Header />
       <div className="seafood-container">
-            <div className="recipe" key={randomMealResult.idMeal}>
+            <div className="recipe" 
+            key={randomMealResult.idMeal}
+            onClick={() => renderDetails(randomMealResult.idMeal)}
+            >
               <h3 className="recipe-name">{randomMealResult.strMeal}</h3>
               <img className="recipe-image" src={randomMealResult.strMealThumb} />
             </div>
