@@ -1,0 +1,10 @@
+.random-meal-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.random-meal-image {
+  width: 30vw;
+  border-radius: 10px;
+}

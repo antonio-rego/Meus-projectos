@@ -25,7 +25,7 @@ export function PortugueseDishes() {
   return (
     <>
       <Header />
-      <div className="seafood-container">
+      <div className="recipes-container">
         {portugueseFoodResults.map((recipe) => {
           return (
             <div className="recipe" 

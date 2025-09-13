@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Header } from "./Header";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import './RandomMeal.css'
 
 export function RandomMeal() {
 
@@ -24,13 +25,13 @@ export function RandomMeal() {
   return (
     <>
       <Header />
-      <div className="seafood-container">
+      <div className="random-meal-container">
             <div className="recipe" 
             key={randomMealResult.idMeal}
             onClick={() => renderDetails(randomMealResult.idMeal)}
             >
               <h3 className="recipe-name">{randomMealResult.strMeal}</h3>
-              <img className="recipe-image" src={randomMealResult.strMealThumb} />
+              <img className="random-meal-image" src={randomMealResult.strMealThumb} />
             </div>
       </div>
     </>

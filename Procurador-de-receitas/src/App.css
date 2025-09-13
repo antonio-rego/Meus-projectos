@@ -4,3 +4,15 @@ body {
   margin: 0;
 }
 
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.recipe-image {
+  width: 25vw;
+  border-radius: 10px;
+}

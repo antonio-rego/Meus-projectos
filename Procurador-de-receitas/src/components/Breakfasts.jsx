@@ -24,7 +24,7 @@ export function Breakfasts() {
   return (
     <>
       <Header />
-      <div className="seafood-container">
+      <div className="recipes-container">
         {breakfastsResults.map((recipe) => {
           return (
             <div className="recipe" 

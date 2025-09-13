@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import './RecipeDetails.css';
 
 export function RecipeDetails() {
 
@@ -29,22 +30,32 @@ export function RecipeDetails() {
   }
 
   return (
-    <div className="recipe-details">
+    <>
       <h1 className="recipe-details-name">{recipeDetails.strMeal}</h1>
-      <img className="recipe-details-image" src={recipeDetails.strMealThumb} />
-      <p className="recipe-details-country">
-        Origin: {recipeDetails.strArea}
-      </p>
-      <ul className="recipe-details-ingredients">
-        Ingredients: {ingredients.map((ing, idx) => {
-          return (
-            <li key={idx}>{ing}</li>
-          );
-        })}
-      </ul>
-      <p className="recipe-details-instructions">
-        {recipeDetails.strInstructions}
-      </p>
-    </div>
+      <div className="recipe-details">
+        <div className="recipe-img-container">
+          <img className="recipe-details-image" src={recipeDetails.strMealThumb} />
+        </div>
+        <div className="recipe-details-information">
+          <h2 className="recipe-details-country">
+            Origin: {recipeDetails.strArea}
+          </h2>
+          <h3>Ingredients:</h3>
+          <ul className="recipe-details-ingredients">
+            {ingredients.map((ing, idx) => {
+              return (
+                <li key={idx}>{ing}</li>
+              ); // no map o segundo valor devolve sempre o index
+            })}
+          </ul>
+        </div>
+      </div>
+      <div className="recipe-instructions">
+        <h3>Instructions:</h3>
+        <p>
+          {recipeDetails.strInstructions}
+        </p>
+      </div>
+    </>
   )
 }
