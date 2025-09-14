@@ -7,4 +7,5 @@
 .random-meal-image {
   width: 30vw;
   border-radius: 10px;
+  cursor: pointer;
 }

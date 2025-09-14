@@ -32,6 +32,7 @@ export function RandomMeal() {
             >
               <h3 className="recipe-name">{randomMealResult.strMeal}</h3>
               <img className="random-meal-image" src={randomMealResult.strMealThumb} />
+              <p>Click the image for details</p>
             </div>
       </div>
     </>

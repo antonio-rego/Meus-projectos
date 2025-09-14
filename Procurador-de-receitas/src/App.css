@@ -15,4 +15,10 @@ body {
 .recipe-image {
   width: 25vw;
   border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-image:hover {
+  transform: scale(1.05);
 }

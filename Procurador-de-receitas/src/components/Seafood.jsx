@@ -34,6 +34,7 @@ export function SeaFood() {
             >
               <h3 className="recipe-name">{recipe.strMeal}</h3>
               <img className="recipe-image" src={recipe.strMealThumb} />
+              <p>Click the image for details</p>
             </div>
           )
         })}
