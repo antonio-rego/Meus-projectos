@@ -85,6 +85,11 @@ h4 {
   background-color: white;
 }
 
+.projects a {
+  display: block;   
+  width: fit-content; 
+}
+
 a {
   text-decoration: none;
   color: black;
